@@ -1,0 +1,201 @@
+﻿
+<ion-view view-title="Usuario">
+    <ion-content>
+        <!--<button id="fabUsuario"   class="button  button-fab button-fab-bottom-right" style=" background-color: #ff362a;">-->
+        <!--<i class="icon ion-plus"></i>-->
+        <!--</button>-->
+
+        <div id="popupAlterarUsuario" class="overlay">
+            <div class="popup">
+                <h2> Alterar Usuario</h2>
+                <a class="close" href="#" ng-click="fechar()" >&times;</a>
+                <div class="content">
+
+
+                    <div class="view-form">
+
+                        <form  class="form-horizontal">
+
+                            <div class="panel panel-default">
+                                <!--<div class="panel-heading"></div>-->
+                                <div class="panel-body">
+                                    <div class="form-group">
+
+                                        <label name="titulo" class="control-label col-md-2" > Email: </label>
+                                        <div class="col-md-10">
+                                            <input type="text" class="form-control" name="tituloNoticiaTopo" ng-model="altusuario.email"  maxlength="50"  required />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+
+                                        <label name="permissao" class="control-label col-md-2"> Permissão:  </label>
+                                        <div class="col-md-2">
+
+                                            <table class="table table-striped">
+                                                <thead>
+                                                <tr class="">
+                                                    <th>Nome</th>
+                                                    <th></th>
+
+                                                </tr>
+                                                </thead>
+                                                <tr ng-repeat="permissao in altusuario.permissoes" class="">
+
+                                                    <th>{{permissao.nome}}</th>
+                                                    <th> <button type="button" name="Excluir" class="btn btn-danger" aria-label="Left Align" ng-click="remover($index)">X</button>
+                                                    </th>
+
+                                                </tr>
+
+
+                                            </table>
+
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-md-6">
+                                                <label name="titulo" class="control-label" > Adicionar Permissão: </label>
+                                                <div class="">
+                                                    <select ng-model="perm" >
+                                                        <option value="User">Usuario</option>
+                                                        <option value="Administrador">Administrador</option>
+                                                        <option value="Feed">Feed</option>
+                                                    </select>
+                                                    <button type="button" ng-click="addPermissao(perm)" class="btn btn-success">Adicionar</button>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+
+                                    </div>
+
+                                    <!-- BOTÕES DE AÇÕES -->
+                                    <div class="form-group">
+                                        <div style="alignment-adjust: central" ><center>
+                                            <span id="load"></span>
+                                            <button ng-click="alterar(altprofissional)" type="submit" name="btnsubmit" class="btn btn-success" aria-label="Left Align">Salvar</button>
+                                            <button type="reset" name="btnreset" class="btn btn-danger" aria-label="Right Align">Limpar</button>
+                                        </center>
+                                        </div>
+                                        <div class="col-md-9" style="text-align: right"></div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <!--<div id="popupSalvarUsuario" class="overlay">-->
+        <!--<div class="popup">-->
+        <!--<h2> Inserir Usuario</h2>-->
+        <!--<a class="close" href="#" ng-click="fechar()" >&times;</a>-->
+        <!--<div class="content">-->
+
+
+        <!--<div class="view-form">-->
+
+
+        <!--<form class="log_form" name="cad">-->
+        <!--<div class="list list-inset">-->
+        <!--<label class="item item-input">-->
+        <!--<input type="email" placeholder="example@mail.com" ng-model="usuario.email" ng-required="true"/>-->
+        <!--</label>-->
+        <!--<label class="item item-input">-->
+        <!--<input type="password" placeholder="************" ng-model="usuario.senha" ng-required="true"/>-->
+        <!--</label>-->
+        <!--<label class="item item-input">-->
+        <!--Permissão:-->
+        <!--<select ng-model="usuario."-->
+        <!--<input type="tel" placeholder="mobile" ng-model="usuario.telefone"/>-->
+        <!--</label>-->
+
+
+
+
+
+
+        <!--&lt;!&ndash; BOTÕES DE AÇÕES &ndash;&gt;-->
+
+        <!--<div class="form-group">-->
+        <!--<div style="alignment-adjust: central" ><center>-->
+        <!--<span id="load2"></span>-->
+        <!--<button ng-click="salvar(usuario)" type="button" name="btnsubmit" class="btn btn-success" aria-label="Left Align">Salvar</button>-->
+        <!--<button type="reset" name="btnreset" class="btn btn-danger" aria-label="Right Align">Limpar</button>-->
+        <!--</center>-->
+        <!--</div>-->
+        <!--<div class="col-md-9" style="text-align: right"></div>-->
+        <!--</div>-->
+
+        <!---->
+        <!--</div>-->
+        <!--</form>-->
+        <!--</div>-->
+
+        <!--</div>-->
+        <!--</div>-->
+
+        <!--</div>-->
+
+
+
+
+
+        <!--<label class="control-label">Select File</label>-->
+        <!--<input id="input-2" name="input2[]" type="file" class="file" multiple data-show-upload="false" data-show-caption="true">-->
+
+        <div class="container" >
+            <div class="view-form col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading"><span class="glyphicon glyphicon-tasks"></span>Usuario</div>
+                    <div class="panel-body">
+
+                        <table class="table table-striped">
+                            <thead>
+                            <tr class="">
+                                <th>Email</th>
+                                <th>Senha</th>
+                                <th>Permissão</th>
+                                <th></th>
+                                <th></th>
+
+                            </tr>
+                            </thead>
+                            <tr ng-repeat="user in usuarios" class="">
+
+                                <th>{{user.email}}</th>
+                                <th>{{user.senha}}</th>
+                                <th >
+                                    <table>
+                                        <tr  ng-repeat="permissao in user.permissoes  ">
+                                            <th>
+                                                {{permissao.nome}}
+                                            </th>
+                                        </tr>
+                                    </table>
+                                </th>
+
+                                <th> <button data-toggle="modal" data-target="modalalterar" type="button" name="Alterar"  class="btn btn-success" aria-label="Left Align" ng-click="setusuario($index)">Altera</button>
+                                </th>
+                                <th> <button type="button" name="Excluir" class="btn btn-danger" aria-label="Left Align" ng-click="remover($index)">Remover</button>
+                                </th>
+
+                            </tr>
+
+
+                        </table>
+
+                    </div>
+                </div>
+
+
+            </div>
+            <!-- Nome do produto/marca sem sidebar quando for o pre-painel  -->
+        </div>
+        </div><!---fim containner--->
+    </ion-content>
+</ion-view>
