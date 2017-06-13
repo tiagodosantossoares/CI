@@ -1,0 +1,74 @@
+<ion-view hide-nav-bar="true" ng-controller="CadastrarCtrl">
+
+    <ion-view view-title="">
+        <div class="bar bar-reader bar-positive">
+            <h1 class="title">  Cadastro</h1>
+        </div>
+
+
+
+  <ion-content class="login_page register_page" scroll="false" style="background:#1A237E">
+
+
+      <input type="hidden" id="id" name="id"/>
+      <div class="panel panel-default">
+          <div class="panel-heading"> Dados Pessoais</div>
+          <div class="panel-body">
+              <div class="form-group">
+                  <label for="nome" class="control-label col-md-2"> Nome</label>
+                  <div class="col-md-4">
+                      <input type="text" class="form-control" name="nome" maxlength="100" placeholder="Nome" ng-model="usuario.nome" ng-required="true">
+                  </div>
+
+              </div>
+
+              <div class="form-group">
+                  <label for="telefone" class="control-label col-md-2"> Telefone</label>
+                  <div class="col-md-4">
+                      <input type="text" class="form-control" name="telefone" maxlength="14" placeholder="Telefone" ng-model="usuario.telefone">
+                  </div>
+
+              </div>
+
+
+          </div>
+
+          <div class="panel-body">
+              <div class="form-group">
+                  <label for="email" class="control-label col-md-2"> E-mail</label>
+                  <div class="col-md-4">
+                      <input type="text" class="form-control" name="email" maxlength="100" placeholder="email@exemplo.com" ng-model="usuario.email" ng-required="true" />
+                  </div>
+              </div>
+
+              <div class="form-group">
+                  <label for="senha" class="control-label col-md-2"> Senha</label>
+                  <div class="col-md-4">
+                      <input type="password" class="form-control" name="senha" maxlength="14" placeholder="Senha" ng-model="usuario.senha" ng-required="true"/>
+                  </div>
+                  <label for="confirmaSenha" class="control-label col-md-2"> Confirmar Senha</label>
+                  <div class="col-md-4">
+                      <input type="password" class="form-control" name="confirmar_senha"  maxlength="14" placeholder="Confirmar Senha" required/>
+                  </div>
+                  <br/><br/>
+
+                  <!-- BOTÕES DE AÇÕES -->
+                  <div class="form-group">
+                      <div style="alignment-adjust: central" ><center>
+                          <span id="load"></span>
+                          <input type="submit" name="btnsubmit" class="btn btn-success" aria-label="Left Align" ng-click="cadastrar(usuario)" ng-disabled="cad.$invalid">
+                          <input type="reset" name="btnreset" class="btn btn-danger" aria-label="Right Align">
+                      </center>
+
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+      </div>
+
+  </ion-content>
+</ion-view>
+
+
+
