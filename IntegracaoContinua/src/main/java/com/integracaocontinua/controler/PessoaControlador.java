@@ -3,16 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package trabalho_test.controler;
+package com.integracaocontinua.controler;
 
-import trabalho_test.repositorio.*;
+import com.integracaocontinua.entidade.PessoaEntidade;
+import com.integracaocontinua.repositorio.PessoaRepositorio;
+import com.integracaocontinua.repositorio.PessoaRepositorioInterface;
 import java.util.ArrayList;
 import java.util.List;
-import org.hibernate.Criteria;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
-import org.hibernate.criterion.Restrictions;
-import trabalho_test.entidade.PessoaEntidade;
 
 /**
  *

@@ -3,9 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package trabalho_test.controler;
+package com.integracaocontinua.controler;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.integracaocontinua.entidade.PessoaEntidade;
+import com.integracaocontinua.repositorio.PessoaRepositorio;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
@@ -18,12 +21,7 @@ import static org.junit.Assert.*;
 import org.junit.runner.RunWith;
 
 import org.mockito.runners.MockitoJUnitRunner;
-import trabalho_test.entidade.PessoaEntidade;
-import trabalho_test.repositorio.PessoaRepositorioInterface;
-/**
- *
- * @author tiago
- */
+
 @RunWith(MockitoJUnitRunner.class)
 public class PessoaControladorMock {
     
@@ -33,7 +31,7 @@ public class PessoaControladorMock {
 PessoaControlador controlador;
 
 @Mock
-private PessoaRepositorioInterface pessoaRepositorio;
+private PessoaRepositorio pessoaRepositorio;
 
 PessoaEntidade pessoa;
 

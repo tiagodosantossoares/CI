@@ -3,10 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package trabalho_test.controler;
+package com.integracaocontinua.controler;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.integracaocontinua.entidade.PessoaEntidade;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -14,8 +16,6 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import trabalho_test.entidade.PessoaEntidade;
-import trabalho_test.repositorio.PessoaRepositorio;
 
 /**
  *
