@@ -1,0 +1,63 @@
+
+<ion-view view-title="">
+
+    <div class="bar bar-reader bar-positive">
+        <h1 class="title">  Hospital de Urgências</h1>
+    </div>
+    <ion-nav-bar class="bar-stable">
+
+        <ion-nav-buttons side="right"  >
+            <button class="button button-icon button-clear back_btn"  ng-click="myGoBack()">
+                <img src="img/arrow.png"/>
+            </button>
+        </ion-nav-buttons>
+
+
+
+        <ion-content class="main_bg" style="background:#FFFFFF">
+
+
+
+
+
+            <div class="news_detail " style="padding-top: 35px;" >
+
+
+
+
+                <div class="card">
+                    <div class="item item-divider">
+                        Exames
+
+                    </div>
+
+                    <div class="item item-text-wrap" ng-repeat="exame in exames">
+                        <ion-item>
+
+
+                            <h2>{{exame.nome}}</h2>
+
+                            <h3>Sinonímia:</h3>
+                            <p>
+                                {{exame.descricao}}
+                            </p>
+
+
+                            <h3>Horario:</h3>
+                            <p>
+                                {{exame.horario}}
+                            </p>
+                            <h3>Valor:</h3>
+                            <p>
+                                {{exame.valor}}
+                            </p>
+                        </ion-item>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </ion-content>
+
+</ion-view>

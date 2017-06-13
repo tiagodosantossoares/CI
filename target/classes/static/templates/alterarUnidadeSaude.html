@@ -1,0 +1,57 @@
+<ion-view view-title="" ng-controller="unidadeSaudeCadastrarCtrl" ng-swipe-right=alert("teste")>
+    <div class="bar bar-reader bar-dark">
+        <h1 class="title"> Alterar Unidade De Saude</h1>
+    </div>
+    <ion-nav-bar class="bar-stable">
+        <ion-nav-buttons side="right" >
+            <a href="#/tab/doctor" class="button button-icon button-clear">
+                <img src="img/ic3.png"/>
+            </a>
+        </ion-nav-buttons>
+
+        <ion-nav-buttons side="left">
+            <a href="#/login" class="button button-icon button-clear left_btn">
+                <img src="img/ic1.png"/>
+            </a>
+            <button class="button button-icon button-clear ser_icon left_btn" ng-click="search_doc()">
+                <img src="img/ic2.png"/>
+            </button>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+
+    <div ng-class="{'animated slideInRight':search_input}" class="bar bar-subheader">
+        <div class="list ser_inpt" ng-if="search_input">
+            <label class="item item-input">
+                <input type="text" placeholder="Buscar">
+            </label>
+        </div>
+    </div>
+
+    <ion-content class="hospital_list" style="background:#333 ;margin-bottom: 50px;">
+
+
+
+<div style="margin-top: 50px; ">
+        <form class="log_form" name="cadun" >
+            <div class="list ">
+                <label class="item item-input">
+                    <input type="text" placeholder="Nome" value="{{un.nome}}"  ng-required="true">
+                </label>
+                <label class="item item-input">
+                    <input type="text" placeholder="Descrição"ng-model="un.descricao"ng-required="true">
+                </label>
+                <label class="item item-input">
+                    <input type="text" placeholder="horario"ng-model="un.horario"ng-required="true">
+                </label>
+
+                <label class="item item-input">
+                    <input type="text"   placeholder="Link" name="url" ng-model="un.url"ng-required="true"/>
+                </label>
+
+                <a href="" class="button button-block" ng-click="salvarUn(un)" >Salvar</a>
+                <a href="#/tab/unidadeDeSaude" class="button button-block main_btn">Back</a>
+            </div>
+        </form>
+</div>
+    </ion-content>
+</ion-view>
